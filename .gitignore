@@ -11,6 +11,9 @@
 # production
 /build
 
+# Arquivo para anotações
+src/rascunho
+
 # misc
 .DS_Store
 .env.local
