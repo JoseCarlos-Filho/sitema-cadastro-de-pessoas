@@ -20,7 +20,8 @@
     "noEmit": true,
     "removeComments": true,
     "noImplicitAny": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": "src"
   },
   "include": [
     "src"
