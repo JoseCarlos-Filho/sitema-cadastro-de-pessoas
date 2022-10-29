@@ -28,9 +28,20 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
+* {
+	scroll-behavior: smooth;
+}
+
+/* scrollbar quase transparent */
+::-webkit-scrollbar {
+	background: rgba(236, 218, 227, 0.90); 
+  }
+  
 body {
 	line-height: 1;
 	font-family: 'Open Sans', sans-serif;
+	overflow: hidden;
 }
 ol, ul {
 	list-style: none;
