@@ -1,0 +1,82 @@
+@import "styles/variaveis";
+
+@mixin txtCenter() {
+    text-align: center;
+}
+
+.infoCard {
+    display: grid;
+    justify-content: center;
+    margin: 30px;
+    grid-template-areas:
+        ". . ."
+        ". . ."
+        "a a a"
+        ". . ."
+        "b b b"
+        ". . ."
+        ". . ."
+        ". . ."
+        "c c c"
+        ". . ."
+        "d . e";
+    box-sizing: border-box;
+    padding: $pd-10;
+    background: $bg-color-formCad;
+    width: 244px;
+    height: 290px;
+    border: 1px solid $bg-color-formCad;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    &:hover {
+        transform: scale(1.001);
+    }
+
+    &__personName {
+        grid-area: a;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 32.68px;
+        @include txtCenter;
+    }
+
+    &__personEmail {
+        grid-area: b;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 27.24px;
+        @include txtCenter;
+    }
+
+    &__personBDay {
+        grid-area: c;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 27px;
+        @include txtCenter;
+    }
+    &__btnUpdate {
+        grid-area: d;
+        margin-left: 10px;
+
+        &:hover {
+            transform: scale(1.08);
+        }
+
+        &:active {
+            transform: rotate(-45deg);
+        }
+    }
+    &__btnDelete {
+        grid-area: e;
+        margin-right: 10px;
+
+        &:hover {
+            transform: scale(1.08);
+        }
+
+        &:active {
+            transform: rotate(45deg);
+        }
+    }
+}
