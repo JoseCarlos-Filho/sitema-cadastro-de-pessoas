@@ -1,0 +1,68 @@
+@import "styles/variaveis";
+
+.modal {
+    max-width: 731px;
+    max-height: 924px;
+    border: none;
+}
+
+.formCad {
+    display: flex;
+    flex-flow: column wrap;
+    background: $bg-color-formCad;
+    height: 92vh;
+    row-gap: 15px;
+
+    &__lbls {
+        display: flex;
+        text-align: right;
+        margin-top: 30px;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 27px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: $primary-color-font;
+        cursor: pointer;
+    }
+    &__inpt {
+        background: $secondary-color;
+        height: 45px;
+        font-size: 20px;
+        text-align: center;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+
+        &:nth-child(2) {
+            width: 330px;
+        }
+        &:nth-child(4) {
+            width: 330px;
+        }
+        &:nth-child(6) {
+            width: 204px;
+        }
+    }
+
+    &__btnCadastrar {
+        width: 204px;
+        height: 45px;
+        background: #50e3c1;
+        color: $secondary-color-font;
+        border: none;
+        border-radius: 10px;
+        margin-top: 30px;
+        font-size: 24px;
+        font-weight: 600;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.08);
+        }
+
+        &:active {
+            background: hsl(118, 87%, 47%);
+        }
+    }
+}
