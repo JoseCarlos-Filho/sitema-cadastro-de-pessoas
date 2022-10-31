@@ -1,5 +1,7 @@
 import styles from "./FormCasdastro.module.scss";
 import { useForm, SubmitHandler  } from "react-hook-form";
+import {IPesssoasDados, PessoasDados } from "services/api/pessoas/PessoasDados";
+ 
 
 type Inputs = {
     name: string,
@@ -9,10 +11,24 @@ type Inputs = {
 
 export default function FormCasdastro() {
     const { register, handleSubmit} = useForm<Inputs>();
-    const onSubmit: SubmitHandler<Inputs> = data =>{
-    
-         console.log(JSON.stringify(data))
+    const onSubmit: SubmitHandler<Inputs> = (data) => {
+        let newPerson: IPesssoasDados; 
+        newPerson = {
+            id: parseInt((Math.random() * (100 - 6) + 6).toString()), /* verificar se o id está duplicado*/
+            name: data.name,
+            email: data.email,
+            bDay: data.bDay,
         };
+         /* Post */ 
+        PessoasDados.createPerson(newPerson).then((result) => {
+            if (result instanceof Error) {
+                alert(result.message);
+                return;
+            }
+        });
+
+        console.log(JSON.stringify(data));
+    };
 
      return (
         <dialog className={styles.modal} open>
