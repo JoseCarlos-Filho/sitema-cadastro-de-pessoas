@@ -5,28 +5,37 @@ import styles from "./Inicio.module.scss";
 
 
 export default function Inicio() {
-    const [registros, setRegistros] = useState<IPesssoasDados[]>([]);
+    const [apiData, setApiData] = useState<IPesssoasDados[]>([]);
+    const [render, setRender] = useState<boolean>(false);
 
     useEffect(() => {
-
         /* pega os dados da API para montar os cards */
         PessoasDados.getAllPersons().then((result) => {
             if (result instanceof Error) {
                 alert(result.message);
                 return;
             } else {
-                setRegistros(result.data);
+                setApiData(result.data);
+                setRender(false);
                 return;
             }
         });
-    }, []);
+    }, [render]); // renderiza a tela de acordo com o state render
 
-    console.dir(registros);
+    /* deleta o registro a partir do evento de click no "botão lixeira"*/
+    function deletePerson(id: string): void {
+        PessoasDados.deletePersonById(parseInt(id)).then((result) => {
+            if (result instanceof Error) {
+                alert(result.message);
+                return;
+            } else setRender(true);
+        });
+    }
+
+    console.dir(apiData);
     return (
         <div className={styles.container}>
-            {
-            registros.map(
-                ({ id, name, email, bDay }): JSX.Element => {
+            {apiData.map(({ id, name, email, bDay }): JSX.Element => {
                 return (
                     <Item
                         key={id}
@@ -34,7 +43,9 @@ export default function Inicio() {
                         name={name}
                         email={email}
                         bDay={bDay}
-                        handleClick={() => console.log("ok")}
+                        handleClick={(e) =>
+                            deletePerson(e.currentTarget.parentElement!.id)
+                        }
                     />
                 );
             })}
