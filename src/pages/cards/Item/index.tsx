@@ -7,7 +7,7 @@ export type Tprops  ={
     name: string;
     email: string;
     bDay: Date;
-    handleClick: ()=> void;
+    handleClick: (event: React.MouseEvent)=> void;
 };
 
 
