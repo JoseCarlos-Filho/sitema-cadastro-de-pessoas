@@ -1,15 +1,18 @@
 import styles from "./FormCasdastro.module.scss";
 import { useForm, SubmitHandler  } from "react-hook-form";
 import {IPesssoasDados, PessoasDados } from "services/api/pessoas/PessoasDados";
+import { useNavigate  } from "react-router-dom";
  
 
-type Inputs = {
+export type Inputs = {
     name: string,
     email: string,
     bDay: Date,
   };
 
-export default function FormCasdastro() {
+  
+  export default function FormCasdastro() {
+    const navigate = useNavigate();
     const { register, handleSubmit} = useForm<Inputs>();
     const onSubmit: SubmitHandler<Inputs> = (data) => {
         let newPerson: IPesssoasDados; 
@@ -26,8 +29,7 @@ export default function FormCasdastro() {
                 return;
             }
         });
-
-        console.log(JSON.stringify(data));
+        navigate("/home")
     };
 
      return (
