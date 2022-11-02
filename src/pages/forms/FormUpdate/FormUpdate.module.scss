@@ -1,22 +1,32 @@
 @import "styles/variaveis";
 
 .update {
+
+}
+
+
+.update {
+    display: flex;
+    flex-direction: column;
+    min-width: 500px;
     max-width: 731px;
     max-height: 924px;
     border: none;
 }
 
-.formCad {
+.formUp {
     display: flex;
     flex-flow: column wrap;
     background: $bg-color-formCad;
-    height: 92vh;
+    height: 700px;
+    min-width: 310px;
+    margin: 10px auto;
     row-gap: 15px;
 
     &__lbls {
-        display: flex;
-        text-align: right;
-        margin-top: 30px;
+        display: inline-block;
+        margin-top: 10px;
+        width: 100%;
         font-size: 20px;
         font-weight: 400;
         line-height: 27px;
@@ -27,6 +37,7 @@
     }
     &__inpt {
         background: $secondary-color;
+        margin: 0 auto;
         height: 45px;
         font-size: 20px;
         text-align: center;
@@ -35,17 +46,21 @@
         cursor: pointer;
 
         &:nth-child(2) {
-            width: 330px;
+            min-width: 260px;
+            max-width: 330px;
         }
         &:nth-child(4) {
-            width: 330px;
+            min-width: 260px;
+            max-width: 330px;
         }
         &:nth-child(6) {
             width: 204px;
         }
     }
 
-    &__btnCadastrar {
+    &__btn {
+        display: block;
+        margin: 0 auto;
         width: 204px;
         height: 45px;
         background: #50e3c1;
@@ -64,5 +79,15 @@
         &:active {
             background: hsl(118, 87%, 47%);
         }
+    }
+    
+}
+
+@media(max-height:620px){
+    body{
+        overflow-y: auto;
+    }
+    .formCad {
+        height: 80%;
     }
 }
