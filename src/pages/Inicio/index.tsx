@@ -1,5 +1,5 @@
-import CardUpdate from "pages/cards/CardUpdate";
-import Item from "pages/cards/Item";
+import FormUpdate from "pages/forms/FormUpdate";
+import Card from "pages/Inicio/Card";
 import { useEffect, useState } from "react";
 import {IPesssoasDados, PessoasDados } from "services/api/pessoas/PessoasDados";
 import styles from "./Inicio.module.scss";
@@ -50,11 +50,6 @@ function personData (e:any){
          bDay: found!.bDay
         });
 }
-
-    // console.log(found!.id,found!.name);
-
-
-    
     
     return (
         <div className={styles.container}>
@@ -62,7 +57,7 @@ function personData (e:any){
                 <>
                 {apiData.map(({ id, name, email, bDay }): JSX.Element => {
                     return (
-                        <Item
+                        <Card
                         key={id}
                         id={id}
                         name={name}
@@ -81,7 +76,7 @@ function personData (e:any){
             )}
                 
                 {update &&( 
-                    <div>{<CardUpdate id={update.id} name={update.name} email={update.email} bDay={update.bDay} />}</div>   )  
+                    <div>{<FormUpdate id={update.id} name={update.name} email={update.email} bDay={update.bDay} />}</div>   )  
                 }
         </div>
     )

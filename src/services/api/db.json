@@ -1,30 +1,34 @@
 {
-    "person": [
-        {
-            "id": 1,
-            "name": "João da Silva",
-            "email": "joaodasilva@gmail.com",
-            "bDay" : "01/02/1960"   
-        }, {
-            "id": 2,
-            "name": "Maria Joaquina",
-            "email": "mariajoaquina@gmail.com",
-            "bDay" : "12/25/1970" 
-        }, {
-            "id": 3,
-            "name": "Ronaldo Cristino",
-            "email": "ronaldocristino@hotmail.com",
-            "bDay" : "05/08/1978" 
-        }, {
-            "id": 4,
-            "name": "Jéssica Esteves Gomes",
-            "email": "JessicaE@hotmail.com",
-            "bDay" : "05/08/1978" 
-        }, {
-            "id": 5,
-            "name": "Elliot Powell",
-            "email": "elliotpow@hotmail.com",
-            "bDay" : "05/15/1975" 
-        }
-    ]
+  "person": [
+    {
+      "id": 1,
+      "name": "João da Silva",
+      "email": "joaodasilva@gmail.com",
+      "bDay": "01/02/1960"
+    },
+    {
+      "id": 2,
+      "name": "Maria Joaquina",
+      "email": "mariajoaquina@gmail.com",
+      "bDay": "12/25/1970"
+    },
+    {
+      "id": 3,
+      "name": "Ronaldo Cristino",
+      "email": "ronaldocristino@hotmail.com",
+      "bDay": "05/08/1978"
+    },
+    {
+      "id": 4,
+      "name": "Jéssica Esteves Gomes",
+      "email": "JessicaE@hotmail.com",
+      "bDay": "05/08/1978"
+    },
+    {
+      "id": 5,
+      "name": "Elliot Powell",
+      "email": "elliotpow@hotmail.com",
+      "bDay": "05/15/1975"
+    }
+  ]
 }

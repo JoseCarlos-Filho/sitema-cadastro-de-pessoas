@@ -3,7 +3,7 @@ const formatDateDMY = (bDay: Date) => {
     const date = new Date(bDay);
     const year = date.getFullYear();
     const month = date.getMonth() + 1;
-    const day = date.getDate();
+    const day = date.getDate() +1;
     return `${(day < 10 && "0" + day) || day}/${
         (month < 10 && "0" + month) || month
     }/${year}`;
@@ -14,8 +14,8 @@ const formatDateYMD = (bDay: Date) => {
     const date = new Date(bDay);
     const year = date.getFullYear();
     const month = date.getMonth() + 1;
-    const day = date.getDate();
-    return `${year}-${(day < 10 && "0" + month) || month}-${
+    const day = date.getDate() + 1;
+    return `${year}-${(month < 10 && "0" + month) || month}-${
         (day < 10 && "0" + day) || day
     }`;
 };
