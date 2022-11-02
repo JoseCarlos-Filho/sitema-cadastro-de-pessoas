@@ -1,0 +1,81 @@
+@import "styles/variaveis";
+
+@mixin fontSetup() {
+  color: $secondary-color;
+  font-size: 32px;
+  font-weight: 700;
+  // line-height: 44px;
+  text-decoration: none;
+}
+
+@mixin flex($fd: row, $fw: wrap) {
+  display: flex;
+  flex-flow: $fd $fw;
+}
+
+.header {
+  height: auto;
+  background: $bg-color-header-footer;
+  opacity: 85%;
+  .btnHambuguer {
+    // display: none;
+    background: transparent;
+    margin: 5px;
+    height: 60px;
+    width: 60px;
+    border: none;
+
+    &__img {
+    }
+  }
+  .nav {
+    padding: $pd-10;
+    @include flex;
+    width: 95%;
+    justify-content: space-between;
+
+    &__linkInicio {
+      @include fontSetup;
+    }
+    &__ul {
+      @include flex;
+      &__links {
+        @include fontSetup;
+        margin: 0 10px;
+      }
+    }
+
+    & a:hover {
+      color: #4c0b2f;
+    }
+
+    & a:active {
+      color: #8000ff;
+    }
+  }
+}
+
+.fade {
+  opacity: 1;
+  transition: opacity 0.25s ease-in-out;
+  -moz-transition: opacity 0.25s ease-in-out;
+  -webkit-transition: opacity 0.25s ease-in-out;
+}
+
+.isHide {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .header > .nav {
+    margin-top: 20px;
+    @include flex(column, wrap);
+    justify-content: space-around;
+    width: 200px;
+    height: 150px;
+
+    .nav__linkInicio {
+      margin: 0 12px;
+    }
+  }
+}
