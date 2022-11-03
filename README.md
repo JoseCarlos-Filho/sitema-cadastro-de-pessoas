@@ -15,7 +15,7 @@ Este projeto é uma página que realiza um simples [CRUD](https://learn.microsof
 - Remover alguma pessoa da lista
 - Adicionar uma ou mais pessoas à lista
 
-Em breve terá o deploy da aplicação aqui, estarei a trabalhar mais alguns dias neste projeto melhorando o seu código e disponibilizando novas features!
+[Deploy da aplicação](https://sitema-cadastro-de-pessoas.vercel.app/)
 
 
 
@@ -35,7 +35,7 @@ Em breve terá o deploy da aplicação aqui, estarei a trabalhar mais alguns dia
 
 
 ##  Instalação
-<details><summary><b>Intruções</b></summary>
+<details><summary><b>Instruções</b></summary>
 
 1. No terminal da sua preferência execute o comando [git clone](https://www.git-scm.com/docs/git-clone):
 
@@ -80,6 +80,24 @@ Em breve terá o deploy da aplicação aqui, estarei a trabalhar mais alguns dia
 Abra [http://localhost:3000](http://localhost:3000) para visualização no seu navegador.
 
 </details>
+
+
+<details><summary><b>Intruções base URL API</b></summary>
+Para fazer o teste, antes deve-se mudar base URL em ```src/services/axios-config/index.ts```
+
+
+de 
+```https://cadastro-pessoas-fake-api.herokuapp.com/person```
+
+![](https://i.imgur.com/SkGJu2O.png)
+
+
+para 
+```http://localhost:5000/person```
+
+![](https://i.imgur.com/du25CaQ.png)
+</details>
+
 
 ## Organização
 - Páginas e Componentes e arquivos de  estilo
