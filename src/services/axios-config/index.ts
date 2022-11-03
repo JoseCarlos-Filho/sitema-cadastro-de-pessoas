@@ -3,7 +3,7 @@ import { errorInterceptor } from "./interceptors/Errorinterceptor";
 import { responseinterceptor } from "./interceptors/Responseinterceptor";
 
 const Api = axios.create({
-    baseURL: "http://localhost:5000/person"
+    baseURL: "https://cadastro-pessoas-fake-api.herokuapp.com/person"
 });
 
 Api.interceptors.response.use(
