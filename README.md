@@ -1,46 +1,98 @@
-# Getting Started with Create React App
+# Sistema de Cadastro de Pessoas
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+<div>
+<img src="https://i.imgur.com/znB6f6F.png" alt="tela mobile" width="15%" >
+<img src="https://i.imgur.com/lFBYuL7.png" alt="tela desktop"  width="60%" > 
+ </div>
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Sobre o projeto
+Este projeto é uma página que realiza um simples [CRUD](https://learn.microsoft.com/en-us/iis-administration/api/crud) no frontend, utilizando uma API Fake para fazer as simulações em tempo de desenvolvimento, ele foi criado com as tecnologias listadas abaixo. Nesta aplicação você consegue:
+- Ver uma lista de pessoas cadastradas
+- Editar os dados de alguma pessoa a lista
+- Remover alguma pessoa da lista
+- Adicionar uma ou mais pessoas à lista
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Em breve terá o deploy da aplicação aqui, estarei a trabalhar mais alguns dias neste projeto melhorando o seu código e disponibilizando novas features!
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Tecnologias utilizadas
+- [React.js](https://pt-br.reactjs.org/) [Framework]
+- [Typescript](https://www.typescriptlang.org/) [Linguagem]
+- [SAAS](https://sass-lang.com/) [pré-processador CSS]
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Packages**:
+  - [json-server](https://www.npmjs.com/package/json-server#getting-started) [Api Fake (mock API)]
+  - [node-sass](https://www.npmjs.com/package/node-sass)
+  - [typescript-plugin-css-modules](https://www.npmjs.com/package/typescript-plugin-css-modules) [CSS modular]
+  - [axios](https://www.npmjs.com/package/axios) [para fazer requisições a API]
+  - [classnames](https://www.npmjs.com/package/classnames) [estilização condicional]
+  - [useForm](https://www.useform.org/Use) [formulários para react]
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+##  Instalação
+<details><summary><b>Intruções</b></summary>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. No terminal da sua preferência execute o comando [git clone](https://www.git-scm.com/docs/git-clone):
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    ```sh
+    $ git clone https://github.com/Odisseu93/sitema-cadastro-de-pessoas
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+2. Entre na pasta do projeto:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    ```diff
+    $ cd sitema-cadastro-de-pessoas
+    ```
 
-## Learn More
+4. Instale as dependencias do projeto
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    ```diff
+    $ npm install
+    ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. instale o [JSON SerVer](https://github.com/typicode/json-server):
+
+    ```
+    $ npm install -g json-server
+    ```
+
+5. Na pasta do projeto entre onde está o arquivo JSON:
+
+    ```diff
+    $ cd .\src\services\api\
+  
+    ```
+
+6. Inicie o JSON Server o json-server:
+
+    ```diff
+     $ json-server --watch db.json --port 5000
+    ```
+7. Agora em outro terminal aberto na pasta do projeto (outra janela), para rodar a aplicação digite: 
+    ```diff
+     $ npm run start
+    ```
+Abra [http://localhost:3000](http://localhost:3000) para visualização no seu navegador.
+
+</details>
+
+## Organização
+- Páginas e Componentes e arquivos de  estilo
+
+![](https://i.imgur.com/CdgacQB.png)
+
+- Configurações do axios, [interceptors](https://axios-http.com/docs/interceptors) e funções para realizar as requisições
+
+![](https://i.imgur.com/ICY6cYJ.png)
+
+
+- Em **Styles** está algumas variáveis personalizadas utilizadas na estilzação com SASS e em **utils** está algumas funções utilitárias
+
+![](https://i.imgur.com/SS2BKgL.png)
+
+todas estas pastas e arquivos estão em [src](https://github.com/Odisseu93/sitema-cadastro-de-pessoas/tree/main/src) na pasta do projeto.
