@@ -6,11 +6,12 @@ import classNames from "classnames";
 
 export default function Header() {
   const [isActive, setIsActive] = useState<boolean>(true);
-  const [screenWidth, SetscreenWidth] = useState<number>();
+  const [screenWidth, SetscreenWidth] = useState<number>(window.innerWidth);
   useEffect(() => {
     window.addEventListener("resize", () => {
       SetscreenWidth(window.innerWidth);
       if (window.innerWidth > 768) setIsActive(true);
+      else setIsActive(false);
     });
   }, []);
 
@@ -18,7 +19,7 @@ export default function Header() {
     <header className={styles.header}>
       <button
         className={classNames(
-          screenWidth! < 768
+          screenWidth < 768
             ? { [styles.btnHambuguer]: true }
             : { [styles.isHide]: true }
         )}
