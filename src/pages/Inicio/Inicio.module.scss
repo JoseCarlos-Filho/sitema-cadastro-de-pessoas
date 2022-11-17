@@ -1,11 +1,37 @@
-@import 'styles/variaveis';
+@import "styles/variaveis";
 
 .container {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    height: 92vh;
-    max-width: 100vw;
-    background: $secondary-color;
-    overflow-y: scroll;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  height: 92vh;
+  max-width: 100vw;
+  background: $secondary-color;
+  overflow-y: scroll;
+}
+
+.loader {
+  margin: auto;
+
+  border: 20px solid #eaf0f6;
+
+  border-radius: 50%;
+
+  border-top: 20px solid #ff7a59;
+
+  width: 200px;
+
+  height: 200px;
+
+  animation: spinner 4s linear infinite;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
